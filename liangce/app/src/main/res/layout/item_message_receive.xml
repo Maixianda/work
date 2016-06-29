@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:swipe="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.avos.avoscloud.im.v2.AVIMMessage" />
+
+        <variable
+            name="icon"
+            type="String" />
+
+        <variable
+            name="vh"
+            type="io.ganguo.library.ui.adapter.v7.ViewHolder.BaseViewHolder" />
+
+        <variable
+            name="adapter"
+            type="io.ganguo.library.ui.adapter.v7.BaseAdapter" />
+
+        <import type="com.gzliangce.util.XmlUtil" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_chat_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/gray_b3"
+            android:textSize="@dimen/font_12"
+            app:setChatDate="@{data.timestamp}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_10">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_broke_header"
+                android:layout_width="@dimen/dp_46"
+                android:layout_height="@dimen/dp_46"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_7"
+                android:background="@drawable/ic_header_default"
+                android:scaleType="fitXY"
+                android:src="@{icon}"
+                app:riv_border_color="@color/gray_db"
+                app:riv_border_width="2px"
+                app:riv_corner_radius="5px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_broke_header"
+                android:background="@drawable/ic_message_receive"
+                android:gravity="center"
+                android:text="@{XmlUtil.getMessageContent(data)}"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_14" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

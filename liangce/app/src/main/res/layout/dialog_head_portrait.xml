@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_take_picture"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:background="@drawable/ripple_default_white"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="拍照"
+            android:textColor="@color/over_font_color"
+            android:textSize="@dimen/font_19" />
+
+        <include layout="@layout/view_line_vertical" />
+
+        <TextView
+            android:id="@+id/tv_chose_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:background="@drawable/ripple_default_white"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="从手机相册选择"
+            android:textColor="@color/over_font_color"
+            android:textSize="@dimen/font_19" />
+
+        <include layout="@layout/view_line_vertical" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_49"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ripple_default_white"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/red_fa4"
+            android:textSize="@dimen/font_19" />
+
+    </LinearLayout>
+
+</layout>

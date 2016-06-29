@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_18"
+                android:paddingRight="@dimen/dp_18"
+                android:paddingTop="@dimen/dp_10"
+                android:text="Tips:每月还款本金固定，所以总利息较少"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_11" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_230"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp_5">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_197">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pi_piechare"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_197"
+                        android:layout_gravity="center_horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="平均月供"
+                            android:textColor="@color/gray_95"
+                            android:textSize="@dimen/font_13" />
+
+                        <TextView
+                            android:id="@+id/tv_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_8"
+                            android:text="885"
+                            android:textColor="@color/black_0a"
+                            android:textSize="@dimen/font_15" />
+                    </LinearLayout>
+                </FrameLayout>
+
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tv_detailed_monthly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/ripple_default"
+                android:drawablePadding="@dimen/dp_5"
+                android:drawableRight="@drawable/ic_back_right"
+                android:gravity="right"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_12"
+                android:paddingTop="@dimen/dp_5"
+                android:text="查看详细月供"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_14" />
+
+            <include
+                layout="@layout/view_line_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_18">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_rectangle_blue"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="贷款总额:"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_total_loan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="140"
+                    android:textColor="@color/red_fa4"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="万元"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_18">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_rectangle_orange"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="支付利息:"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_interest_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="140"
+                    android:textColor="@color/red_fa4"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_18">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="还款总额:"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_reimbursement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="140"
+                    android:textColor="@color/red_fa4"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="万元"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_interest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/view_line_vertical" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_18">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_17"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:text="利息:"
+                        android:textColor="@color/black_0a"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:id="@+id/tv_interest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/red_fa4"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textColor="@color/black_0a"
+                        android:textSize="@dimen/font_15" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_18">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:layout_weight="1"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="首月月供:"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_initial_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="140"
+                    android:textColor="@color/red_fa4"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_54"
+                android:gravity="center"
+                android:text="以上结果仅供参考"
+                android:textColor="@color/gray_line"
+                android:textSize="@dimen/font_12" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

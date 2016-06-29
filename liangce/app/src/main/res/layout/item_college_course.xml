@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.CourseInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_7"
+        android:layout_marginRight="@dimen/dp_7"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@drawable/ripple_default"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_97"
+                android:scaleType="fitXY"
+                android:src="@drawable/shape_image_loading"
+                app:riv_border_color="@color/gray_db"
+                app:riv_border_width="2px"
+                app:riv_corner_radius="7px" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_mine_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_97"
+                android:scaleType="fitXY"
+                android:src="@{data.cover}"
+                app:riv_border_color="@color/gray_db"
+                app:riv_border_width="2px"
+                app:riv_corner_radius="7px" />
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_video" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_3"
+            android:text="@{data.courseName}"
+            android:textColor="@color/black_0a"
+            android:textSize="@dimen/font_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.description}"
+            android:textColor="@color/gray_7d"
+            android:textSize="@dimen/font_11" />
+
+    </LinearLayout>
+
+</layout>

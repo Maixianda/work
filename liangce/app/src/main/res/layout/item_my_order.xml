@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.OrderInfo" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+
+        <variable
+            name="vh"
+            type="io.ganguo.library.ui.adapter.v7.ViewHolder.BaseViewHolder" />
+
+        <variable
+            name="adapter"
+            type="io.ganguo.library.ui.adapter.v7.BaseAdapter" />
+
+        <import type="com.gzliangce.util.XmlUtil" />
+
+        <import type="android.view.View" />
+
+        <import type="io.ganguo.library.util.Strings" />
+
+        <import type="com.gzliangce.enums.OrderStatusType" />
+
+        <import type="com.gzliangce.enums.UserType" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lly_item_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_default_white"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_7"
+        app:adapter="@{adapter}"
+        app:itemClick="@{adapter.itemClick}"
+        app:vh="@{vh}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_26"
+                android:layout_height="@dimen/dp_26"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:layout_marginRight="@dimen/dp_7"
+                android:scaleType="fitXY"
+                android:src="@{data.icon}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="产品类型："
+                        android:textColor="@color/black_0a"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:id="@+id/tv_product_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{data.productName}"
+                        android:textColor="@color/black_0a"
+                        android:textSize="@dimen/font_14" />
+
+                    <TextView
+                        android:id="@+id/tv_order_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:text="@{XmlUtil.orderStatusShow(data.status)}"
+                        android:textColor="@{XmlUtil.orderStatusColor(data.status)}"
+                        android:textSize="@dimen/font_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="案件编号："
+                        android:textColor="@color/gray_6e"
+                        android:textSize="@dimen/font_13" />
+
+                    <TextView
+                        android:id="@+id/tv_case_number"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{data.number}"
+                        android:textColor="@color/gray_95"
+                        android:textSize="@dimen/font_13" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal"
+                    android:visibility="@{XmlUtil.isMortgageAndOrderStuts(data)?View.GONE:View.VISIBLE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="物业地址："
+                        android:textColor="@color/gray_6e"
+                        android:textSize="@dimen/font_13" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{data.address}"
+                        android:textColor="@color/gray_95"
+                        android:textSize="@dimen/font_13" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{XmlUtil.judgeUserIsMediator(data)}"
+                                android:textColor="@color/gray_6e"
+                                android:textSize="@dimen/font_13" />
+
+                            <TextView
+                                android:id="@+id/tv_mediation_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@{XmlUtil.getRealName(data)}"
+                                android:textColor="@color/gray_6e"
+                                android:textSize="@dimen/font_13" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:text="@{LiangCeUtil.showCreateTime(data.createTime)}"
+                            android:textColor="@color/gray_b3"
+                            android:textSize="@dimen/font_11" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lly_mortgage_operation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="@{LiangCeUtil.judgeOrderStatus(data.status,OrderStatusType.wait,UserType.mortgage)?View.VISIBLE:View.GONE}">
+
+                        <TextView
+                            android:id="@+id/tv_change_order"
+                            android:layout_width="@dimen/dp_54"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_marginRight="@dimen/dp_21"
+                            android:background="@drawable/ripple_default_btn_round_blue"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:text="转单"
+                            android:textColor="@color/white"
+                            android:visibility="@{data.canTransfer?View.VISIBLE:View.INVISIBLE}"
+                            app:adapter="@{adapter}"
+                            app:itemClick="@{adapter.itemClick}"
+                            app:vh="@{vh}" />
+
+                        <TextView
+                            android:id="@+id/tv_join_order"
+                            android:layout_width="@dimen/dp_54"
+                            android:layout_height="@dimen/dp_24"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:background="@drawable/ripple_default_btn_round_gray"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:text="接单"
+                            android:textColor="@color/white"
+                            app:adapter="@{adapter}"
+                            app:itemClick="@{adapter.itemClick}"
+                            app:vh="@{vh}" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_cancel_order"
+                        android:layout_width="@dimen/dp_78"
+                        android:layout_height="@dimen/dp_24"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/ripple_default_btn_round_gray"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="取消订单"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_13"
+                        android:visibility="@{LiangCeUtil.judgeOrderStatus(data.status,OrderStatusType.wait,UserType.mediator)?View.VISIBLE:View.GONE}"
+                        app:adapter="@{adapter}"
+                        app:itemClick="@{adapter.itemClick}"
+                        app:vh="@{vh}" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include layout="@layout/view_line_vertical" />
+
+    </LinearLayout>
+
+</layout>

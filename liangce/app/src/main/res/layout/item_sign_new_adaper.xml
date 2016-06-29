@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.SignNewPhotoInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_f4"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lly_action"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:background="@drawable/ripple_default_white"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_46"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_18"
+                android:text="@{data.title}"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/tv_image"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_gravity="center_vertical|right"
+                    android:scaleType="centerCrop"
+                    android:src="@{data.image}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_49"
+                    android:layout_gravity="right"
+                    android:drawablePadding="@dimen/dp_7"
+                    android:drawableRight="@drawable/ic_arrow"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_8"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/view_line_vertical" />
+    </LinearLayout>
+
+</layout>

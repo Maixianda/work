@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/hint"
+            layout="@layout/include_load" />
+
+        <FrameLayout
+            android:id="@+id/fl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.gzliangce.ui.widget.VpSwipeRefreshLayout
+                android:id="@+id/srv_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_all_products"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+            </com.gzliangce.ui.widget.VpSwipeRefreshLayout>
+
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginBottom="@dimen/dp_35"
+                android:background="@drawable/selector_bg_calculator"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_order_direct"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_12"
+                android:text="马上下单"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+        </FrameLayout>
+
+    </FrameLayout>
+</layout>

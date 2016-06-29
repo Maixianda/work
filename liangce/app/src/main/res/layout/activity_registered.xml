@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_f4"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/icd_header"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                bind:header="@{header}" />
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:background="@color/white"
+                    android:digits="0123456789"
+                    android:hint="手机号"
+                    android:inputType="phone"
+                    android:paddingLeft="@dimen/dp_14"
+                    android:paddingRight="@dimen/dp_14"
+                    android:textColor="@color/black_0a"
+                    android:textColorHint="@color/gray_c9"
+                    android:textSize="@dimen/font_14" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_image_code"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:hint="图文验证码"
+                    android:paddingLeft="@dimen/dp_14"
+                    android:paddingRight="@dimen/dp_14"
+                    android:textColor="@color/black_0a"
+                    android:textColorHint="@color/gray_c9"
+                    android:textSize="@dimen/font_14" />
+
+                <FrameLayout
+                    android:layout_width="@dimen/dp_81"
+                    android:layout_height="@dimen/dp_28"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/dp_13">
+
+                    <ImageView
+                        android:id="@+id/iv_image_code"
+                        android:layout_width="@dimen/dp_79"
+                        android:layout_height="@dimen/dp_27"
+                        android:background="@drawable/ripple_default_white"
+                        android:scaleType="fitXY"
+                        android:src="@color/gray_95"
+                        android:textSize="@dimen/font_14" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_sms_code"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:hint="短信验证码"
+                    android:paddingLeft="@dimen/dp_14"
+                    android:paddingRight="@dimen/dp_14"
+                    android:textColor="@color/black_0a"
+                    android:textColorHint="@color/gray_c9"
+                    android:textSize="@dimen/font_14" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_get_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_default_white"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_21"
+                        android:paddingRight="@dimen/dp_21"
+                        android:text="获取验证码"
+                        android:textColor="@color/blue_33"
+                        android:textSize="@dimen/font_12" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+
+            <EditText
+                android:id="@+id/et_recommend_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                android:hint="推荐人手机号(选填)"
+                android:inputType="phone"
+                android:paddingLeft="@dimen/dp_14"
+                android:paddingRight="@dimen/dp_14"
+                android:textColor="@color/black_0a"
+                android:textColorHint="@color/gray_c9"
+                android:textSize="@dimen/font_14" />
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/ck_is_agreed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="true"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/selector_ck_bg"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:paddingLeft="@dimen/dp_15"
+                    android:paddingTop="@dimen/dp_16"
+                    android:text="我已阅读并同意良策金服"
+                    android:textColor="@color/gray_af"
+                    android:textSize="@dimen/font_12" />
+
+                <TextView
+                    android:id="@+id/tv_user_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:paddingTop="@dimen/dp_16"
+                    android:text="《用户使用及安全隐私协议》"
+                    android:textColor="@color/red_fa4"
+                    android:textSize="@dimen/font_12" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_41"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_23"
+                android:background="@drawable/ripple_default_btn_round_gray"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="下一步"
+                android:textColor="@color/color_white_gray_selector"
+                android:textSize="@dimen/font_15" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

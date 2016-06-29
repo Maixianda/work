@@ -1,0 +1,31 @@
+apply from: 'deploy.gradle'
+apply from: 'options.gradle'
+apply plugin: 'com.android.application'
+apply plugin: 'com.zeroturnaround.jrebel.android'
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile(name: 'convenientbanner-release', ext: 'aar')
+    compile project(':GGLibrary')
+    compile project(':OpenSDK')
+    compile project(':PinEditLibrary')
+    compile project(':PickerView')
+    compile project(':lclibrary')
+    compile libs.multidex
+    compile libs.roundedimageview
+    compile libs.switchbutton
+    compile libs.GestureLibrays
+    compile libs.SwipeBackLibrarys
+    compile libs.recyclerviewAnimators
+    compile libs.MPAndroidChart
+    compile libs.photoview
+    compile libs.transforms
+    compile libs.exomedia
+    compile libs.pgyersdk
+    //    按照以下格式引入library, 具体定义在config/global.gradle
+    //    compile libs.activeAndroid
+    //    compile libs.flexibleDivider
+    //    compile libs.recyclerviewAnimators
+}
+repositories { flatDir { dirs 'libs' } }
+

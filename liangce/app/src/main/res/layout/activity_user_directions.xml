@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+        <variable
+            name="account"
+            type="com.gzliangce.entity.AccountInfo" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_f4"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/icd_header"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                bind:header="@{header}" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_129"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/white">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray_line" />
+
+                <EditText
+                    android:id="@+id/et_directions_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:padding="@dimen/dp_14"
+                    android:text="@{account.info.introduce}"
+                    android:textColor="@color/over_font_color"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:id="@+id/tv_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/dp_14"
+                    android:text="70"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

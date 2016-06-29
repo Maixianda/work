@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+        <variable
+            name="user"
+            type="com.gzliangce.entity.AccountInfo" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_f4"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/icd_header"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                bind:header="@{header}" />
+
+
+            <LinearLayout
+                android:id="@+id/lly_qualification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/view_line_vertical" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_47"
+                    android:background="@drawable/ripple_default_white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_49"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp_19"
+                        android:text="资格认证"
+                        android:textColor="@color/black_0a"
+                        android:textSize="@dimen/font_15" />
+
+                    <TextView
+                        android:id="@+id/tv_qualification_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_49"
+                        android:drawablePadding="@dimen/dp_7"
+                        android:drawableRight="@{LiangCeUtil.getAttestationDrable(user.info.status)}"
+                        android:gravity="center_vertical|right"
+                        android:paddingLeft="@dimen/dp_18"
+                        android:paddingRight="@dimen/dp_8"
+                        android:text="@{LiangCeUtil.getAttestationTextStr(user.info.status)}"
+                        android:textColor="@{LiangCeUtil.getAttestationTextColor(user.info.status)}"
+                        android:textSize="@dimen/font_15" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <TextView
+                android:id="@+id/tv_share_app"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:drawableRight="@drawable/ic_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_19"
+                android:paddingRight="@dimen/dp_8"
+                android:text="分享APP"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:id="@+id/lly_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_49"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_19"
+                    android:text="客服电话"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_49"
+                    android:drawablePadding="@dimen/dp_7"
+                    android:drawableRight="@drawable/ic_arrow"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="@dimen/dp_18"
+                    android:paddingRight="@dimen/dp_8"
+                    android:text="400-819-823"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <LinearLayout
+                android:id="@+id/lly_lock_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_49"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_19"
+                    android:text="锁屏设置"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_lock_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_49"
+                    android:drawablePadding="@dimen/dp_7"
+                    android:drawableRight="@drawable/ic_arrow"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="@dimen/dp_19"
+                    android:paddingRight="@dimen/dp_8"
+                    android:text="400-2355-2555"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <TextView
+                android:id="@+id/tv_edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:drawableRight="@drawable/ic_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_19"
+                android:paddingRight="@dimen/dp_8"
+                android:text="修改密码"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <include layout="@layout/view_line_vertical" />
+
+
+            <LinearLayout
+                android:id="@+id/lly_version_update"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_49"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_19"
+                    android:text="版本更新说明"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_15" />
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_49"
+                    android:drawablePadding="@dimen/dp_7"
+                    android:drawableRight="@drawable/ic_arrow"
+                    android:gravity="center_vertical|right"
+                    android:paddingLeft="@dimen/dp_18"
+                    android:paddingRight="@dimen/dp_8"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_15" />
+            </LinearLayout>
+
+            <include layout="@layout/view_line_vertical" />
+
+            <TextView
+                android:id="@+id/tv_about_me"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:drawableRight="@drawable/ic_arrow"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_19"
+                android:paddingRight="@dimen/dp_8"
+                android:text="关于我们"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <include layout="@layout/view_line_vertical" />
+
+            <include
+                layout="@layout/view_line_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8" />
+
+            <TextView
+                android:id="@+id/tv_logout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:background="@drawable/ripple_default_white"
+                android:gravity="center"
+                android:paddingRight="@dimen/dp_8"
+                android:text="退出登录"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_15" />
+
+            <include layout="@layout/view_line_vertical" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

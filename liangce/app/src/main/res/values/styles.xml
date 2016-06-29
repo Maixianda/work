@@ -1,0 +1,56 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Me">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- 右滑返回上一页需要用到的Theme -->
+    <style name="AppTheme.Translucent" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <!--SwitchButton-->
+    <style name="SwitchButtonStyle">
+        <item name="android:width">@dimen/dp_53</item>
+        <item name="android:height">@dimen/dp_48</item>
+    </style>
+
+    <style name="slideToUp" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_bottom_to_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_up_to_bottom</item>
+    </style>
+
+    <style name="SwitchButtonStyleMD" parent="SwitchbuttonMD">
+        <item name="kswBackColor">@drawable/ksw_md_back_color</item>
+        <item name="kswThumbWidth">@dimen/dp_23</item>
+        <item name="kswThumbHeight">@dimen/dp_23</item>
+        <item name="android:layout_marginRight">@dimen/dp_12</item>
+    </style>
+
+    <style name="RatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/shape_rating_start</item>
+        <item name="android:minHeight">@dimen/dp_13</item>
+        <item name="android:maxHeight">@dimen/dp_13</item>
+    </style>
+
+    <style name="SplashTheme" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

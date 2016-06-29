@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+        <variable
+            name="images"
+            type="com.gzliangce.entity.Images" />
+    </data>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <com.gzliangce.ui.widget.PhotoViewPager
+            android:id="@+id/vp_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <include
+            android:id="@+id/icd_header"
+            layout="@layout/include_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            bind:header="@{header}" />
+
+    </FrameLayout>
+</layout>

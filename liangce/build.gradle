@@ -1,0 +1,42 @@
+apply from: 'config/global.gradle'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+buildscript {
+    gradle.startParameter.setOffline(false)//是否离线模式
+    repositories {
+        maven { url 'http://gg2710.jios.org:8081/nexus/content/groups/ganguo_public/' }
+        mavenCentral()
+        jcenter()
+        maven {
+            url 'https://repos.zeroturnaround.com/nexus/content/repositories/zt-public-releases'
+        }
+        maven { url "https://raw.githubusercontent.com/Pgyer/mvn_repo_pgyer/master" }
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.zeroturnaround.jrebel.android:jr-android-gradle:1.0.0'
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'http://gg2710.jios.org:8081/nexus/content/groups/ganguo_public/' }
+        maven { url properties.getProperty("sdk.dir") + "/extras/android/m2repository/" }
+        maven { url properties.getProperty("sdk.dir") + "/extras/google/m2repository/" }
+        maven { url "https://raw.githubusercontent.com/Pgyer/mvn_repo_pgyer/master" }
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'//预定义的gradle版本号
+}
+

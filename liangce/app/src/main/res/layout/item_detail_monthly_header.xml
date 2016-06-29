@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="footer"
+            type="com.gzliangce.ui.model.FooterModel" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_17"
+                android:text="还款总额:"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_reimbursement_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="109.95万元"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dp_17"
+                android:text="万元"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <include layout="@layout/view_line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_17"
+                android:text="贷款总额:"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_loan_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="109.95"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dp_17"
+                android:text="万元"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <include layout="@layout/view_line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_17"
+                android:text="支付利息:"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="109.95"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dp_17"
+                android:text="元"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <include layout="@layout/view_line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_17"
+                android:text="贷款月数:"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_loan_month"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="109.95"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dp_17"
+                android:text="月"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <include layout="@layout/view_line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_17"
+                android:text="月均还款:"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_month_reimbursement_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="109.95"
+                android:textColor="@color/red_fa4"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/dp_17"
+                android:text="元"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+
+        <include
+            layout="@layout/view_line_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_11" />
+    </LinearLayout>
+
+</layout>

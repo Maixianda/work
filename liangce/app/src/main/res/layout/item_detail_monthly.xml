@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="account"
+            type="com.gzliangce.entity.MonthPaymentslyInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_41"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_24"
+            android:text="1月"
+            android:textColor="@color/red_fa4"
+            android:textSize="@dimen/font_14" />
+
+        <include layout="@layout/view_line_vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_41"
+            android:background="@color/gray_ee"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="月份"
+                android:textColor="@color/gray_95"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/tv_payments"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="月供"
+                android:textColor="@color/gray_95"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/tv_principal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="本金"
+                android:textColor="@color/gray_95"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/tv_interest"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="利息"
+                android:textColor="@color/gray_95"
+                android:textSize="@dimen/font_12" />
+
+            <TextView
+                android:id="@+id/tv_remainingLoan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="剩余贷款"
+                android:textColor="@color/gray_95"
+                android:textSize="@dimen/font_12" />
+
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/layout_month1"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month2"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month3"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month4"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month5"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month6"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month7"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month8"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month9"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month10"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month11"
+            layout="@layout/item_months_payments" />
+
+        <include
+            android:id="@+id/layout_month12"
+            layout="@layout/item_months_payments" />
+    </LinearLayout>
+
+</layout>

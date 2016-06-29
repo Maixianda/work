@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.OrderInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:background="@color/white"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="确定呼叫?"
+            android:textColor="@color/gray_95"
+            android:textSize="@dimen/font_14" />
+
+        <include layout="@layout/view_line_vertical" />
+
+        <TextView
+            android:id="@+id/tv_make_sure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:background="@drawable/ripple_default_white"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/blue_33"
+            android:textSize="@dimen/font_19" />
+
+        <include layout="@layout/view_line_vertical" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ripple_default_white"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/red_fa4"
+            android:textSize="@dimen/font_19" />
+
+    </LinearLayout>
+
+</layout>

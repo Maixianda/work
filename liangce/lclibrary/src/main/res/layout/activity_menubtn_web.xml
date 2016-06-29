@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gzliangce.lclibrary.views.VDHLayout
+        android:id="@+id/id_vdh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/id_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@id/id_menu_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_bg"
+            android:clickable="true"
+            android:visibility="gone"
+            android:gravity="center"
+            android:minHeight="30dp"
+            android:minWidth="30dp"
+            android:padding="5dp"
+            android:text="退出" />
+
+    </com.gzliangce.lclibrary.views.VDHLayout>
+
+    <com.gzliangce.lclibrary.views.LoadingLayout
+        android:id="@+id/id_loadview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

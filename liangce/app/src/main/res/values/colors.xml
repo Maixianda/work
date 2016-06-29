@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="red_fa">#fa4141</color>
+    <color name="title_bg">#fa4141</color>
+
+    <color name="black_0a">#0a0a0a</color>
+    <color name="black">#000000</color>
+    <color name="black_1b">#1b1b1b</color>
+    <color name="over_font_color">#1b1b1b</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_press">#ded7d7</color>
+
+    <color name="gray_line">#d2d2d2</color>
+    <color name="gray_db">#dbdad8</color>
+    <color name="gray_72">#727272</color>
+    <color name="gray_7d">#7d7d7d</color>
+    <color name="gray_b5">#b5b5b5</color>
+    <color name="gray_f4">#f4f4f4</color>
+    <color name="gray_6e">#6e6d6d</color>
+    <color name="gray_95">#959595</color>
+    <color name="gray_af4">#afaeae</color>
+    <color name="gray_bf">#bfbfbf</color>
+    <color name="gray_c9">#c9c9c9</color>
+    <color name="gray_ee">#eeeeee</color>
+    <color name="gray_e5">#e5e5e5</color>
+    <color name="gray_af">#afaeae</color>
+    <color name="gray_dc">#dcdcdc</color>
+    <color name="gray_cd">#cdcdcd</color>
+    <color name="gray_b3">#b3b3b3</color>
+    <color name="gray_f3">#f3f3f3</color>
+    <color name="gray_83">#838383</color>
+    <color name="gray_37">#373737</color>
+    <color name="gray_f5">#f5f5f5</color>
+    <color name="gray_d7">#d7d7d7</color>
+    <color name="btn_color_gray_press">#706e6e</color>
+    <color name="btn_color_gray">#5f5f5f</color>
+    <color name="line_bg">#d2d2d2</color>
+    <color name="button_press">#f2f2f2</color>
+
+    <color name="blue_1e">#1e90ff</color>
+    <color name="blue_33">#3399ff</color>
+    <color name="blue_3e">#3e84ca</color>
+    <color name="blue_5d">#5da9ff</color>
+    <color name="blue_00">#00b8ec</color>
+
+    <color name="blue_00a">#00a2e6</color>
+    <color name="green_7e">#7ed11c</color>
+    <color name="green_47">#47c1a8</color>
+    <color name="orange_f8">#f88427</color>
+    <color name="gray_c8">#c8c8c8</color>
+    <color name="gray_89">#898989</color>
+    <color name="purple_dc">#dc67fa</color>
+    <color name="red_fb4e">#fb4e4e</color>
+    <color name="ksw_md_ripple_checked">#fb9999</color>
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_solid_checked">@color/red_fa4</color>
+    <color name="dialog_message_text_bg">#222222</color>
+
+    <color name="black_6564">#656464</color>
+
+</resources>

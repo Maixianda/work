@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+        <variable
+            name="account"
+            type="com.gzliangce.entity.AccountInfo" />
+
+        <import type="android.view.View" />
+
+        <import type="com.gzliangce.enums.UserType" />
+
+        <import type="com.gzliangce.util.XmlUtil" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_f4"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/icd_header"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                bind:header="@{header}" />
+
+            <RelativeLayout
+                android:id="@+id/rly_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_86"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/ripple_default_white"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:text="头像"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_16" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/iv_mine_header"
+                    android:layout_width="@dimen/dp_64"
+                    android:layout_height="@dimen/dp_64"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_27"
+                    android:background="@drawable/ic_header_default"
+                    android:src="@{account.icon}"
+                    app:riv_border_color="@color/gray_db"
+                    app:riv_border_width="2px"
+                    app:riv_corner_radius="7px" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rly_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/ripple_default_white"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="@{XmlUtil.displayHide(account.type,UserType.mediator)}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:text="用户名"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_27"
+                    android:text="@{account.realName}"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_16" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:text="手机号"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:text="@{account.phone}"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rly_language"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/ripple_default_white"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="@{XmlUtil.displayShow(account.type,UserType.mortgage)}">
+
+                <TextView
+                    android:id="@+id/tv_language_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:text="语言"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_27"
+                    android:layout_toRightOf="@+id/tv_language_title"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:text="@{account.info.language}"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_16" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rly_functions"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/ripple_default_white"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="@{XmlUtil.displayShow(account.type,UserType.mortgage)}">
+
+                <TextView
+                    android:id="@+id/tv_functions_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:text="职能范围"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_27"
+                    android:layout_toRightOf="@+id/tv_functions_title"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:text="@{account.info.business}"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_16" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rly_directions"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/ripple_default_white"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:visibility="@{XmlUtil.displayShow(account.type,UserType.mortgage)}">
+
+                <TextView
+                    android:id="@+id/tv_directions_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_17"
+                    android:text="个人说明"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_27"
+                    android:layout_toRightOf="@+id/tv_directions_title"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:text="@{account.info.introduce}"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_16" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@drawable/ic_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/gray_line" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

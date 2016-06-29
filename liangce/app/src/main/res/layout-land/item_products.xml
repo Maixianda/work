@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.ProductsInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lly_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_default_white_round_corners"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_10">
+
+            <ImageButton
+                android:id="@+id/ibtn_product_icon"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:layout_marginRight="@dimen/dp_14"
+                android:background="@null"
+                android:clickable="false"
+                android:src="@drawable/ic_product" />
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_14"
+                android:clickable="false"
+                android:gravity="center"
+                android:text="@{data.productName}"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_13" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

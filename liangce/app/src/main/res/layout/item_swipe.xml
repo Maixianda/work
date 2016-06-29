@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:swipe="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="java.lang.String" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+
+        <variable
+            name="vh"
+            type="io.ganguo.library.ui.adapter.v7.ViewHolder.BaseViewHolder" />
+
+        <variable
+            name="adapter"
+            type="io.ganguo.library.ui.adapter.v7.BaseAdapter" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line_bg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lly_remove"
+                android:layout_width="@dimen/dp_47"
+                app:itemClick="@{adapter.itemClick}"
+                app:vh="@{vh}"
+                app:adapter="@{adapter}"
+                android:layout_height="match_parent"
+                android:background="@drawable/ripple_default_module"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_4">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_item_remove" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_language"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/lly_remove"
+                android:gravity="center_vertical"
+                android:text="@{data}"
+                android:textColor="@color/over_font_color"
+                android:textSize="@dimen/font_16" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_bg" />
+
+    </RelativeLayout>
+
+</layout>

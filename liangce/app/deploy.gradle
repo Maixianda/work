@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileSdkVersion rootProject.ext.compile_sdk_version
+    buildToolsVersion rootProject.ext.build_tools_version
+
+    defaultConfig {
+        //真正的包名在deploy.gradle
+        applicationId "com.gzliangce"
+        minSdkVersion rootProject.ext.min_sdk_version
+        targetSdkVersion rootProject.ext.target_sdk_version
+        versionCode 6
+        versionName "1.2"
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        ganguo_dev {
+            storeFile file("liangce_jinrong.keystore")
+            storePassword "liangce507"
+            keyAlias "liangce_jinrong"
+            keyPassword "liangce507"
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "int", "LOG_LEVEL", "2" //Log.VERBOSE
+            debuggable true
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false //debug包用于开发时使用, 一般不需要混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ganguo_dev
+        }
+        release {
+            buildConfigField "int", "LOG_LEVEL", "4" //Log.INFO
+            debuggable false
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled false //强烈建议使用代码混淆, 用于测试部门、客户测试、上线
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ganguo_dev
+        }
+        //命名各apk
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                def mApplicationId = variant.mergedFlavor.applicationId + (variant.buildType.applicationIdSuffix == null ? "" : variant.buildType.applicationIdSuffix)
+                def mVersionName = variant.mergedFlavor.versionName + (variant.buildType.versionNameSuffix == null ? "" : variant.buildType.versionNameSuffix)
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    def fileName = "${variant.buildType.name}_${variant.productFlavors[0].name}_${mApplicationId}_${defaultConfig.versionCode}_v${mVersionName}.apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }
+    }
+    // 多渠道
+    productFlavors {
+        /**
+         * 测试服务器
+         */
+        stage {
+            applicationId "com.gzliangce.stage"//测试包名
+            manifestPlaceholders = [
+                    appLabel     : "@string/m_app_name_stage",
+                    UMENG_CHANNEL: "stage",
+                    PGYER_KEY    : "12451211d5ferfreffdfs"
+            ]
+            buildConfigField "boolean", "isStage", "true"
+            buildConfigField "String", "BASE_URL", '"http://test.lcedai.com/"'
+            buildConfigField "String", "DATA_PATH", '"LiangCe_Stage"'
+            //为方便测试接入测试的leanCloud id/key
+            buildConfigField "String", "LEAN_CLOUD_ID", '"AsXGHqesNo0paA0qQdW0anXt-gzGzoHsz"'
+            buildConfigField "String", "LEAN_CLOUD_KEY", '"6NBEasX2Rl0487o7Lmolxtzq"'
+        }
+        /**
+         * 后边的全都是生产环境, 一行一个渠道包
+         *
+         */
+        production {}
+        //xiaomi{}
+        //qihu360{}
+        //yingyongbao{}
+    }
+
+    //为生产环境配置所有的渠道包
+    productFlavors.all { flavor ->
+        if (flavor.name != "stage") {
+            flavor.applicationId "com.gzliangce"//正式包名
+            flavor.manifestPlaceholders = [
+                    appLabel     : "@string/m_app_name",
+                    UMENG_CHANNEL: flavor.name,
+                    PGYER_KEY    : "8a3f06f18afbc3d9df95c73791106443" //正式key
+            ]
+            flavor.buildConfigField "boolean", "isStage", "false"
+            //上market的时候更换
+            flavor.buildConfigField "String", "BASE_URL", '"http://app.lcedai.com/"'
+            flavor.buildConfigField "String", "DATA_PATH", '"LiangCe"'
+            //上market的时候更换正式环境的leanCloud id/key
+            flavor.buildConfigField "String", "LEAN_CLOUD_ID", '"ixLoLMgpRbk5QEDDUrkg1uUL-gzGzoHsz"'
+            flavor.buildConfigField "String", "LEAN_CLOUD_KEY", '"ccD3TSLgPbo4XOQrn2DVVinK"'
+        }
+    }
+
+}

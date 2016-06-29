@@ -1,0 +1,182 @@
+{
+  "mortgage": [
+    {
+      "conditionName": "searchDate",
+      "conditionAlias": "查册日期"
+    },
+    {
+      "conditionName": "bespeakNetDate",
+      "conditionAlias": "预约出网签日期"
+    },
+    {
+      "conditionName": "transferNetDate",
+      "conditionAlias": "交接网签日期"
+    },
+    {
+      "conditionName": "signDate",
+      "conditionAlias": "签件日期"
+    },
+    {
+      "conditionName": "hereDate",
+      "conditionAlias": "齐件日期"
+    },
+    {
+      "conditionName": "protocolSendDate",
+      "conditionAlias": "协议公证送日期"
+    },
+    {
+      "conditionName": "protocolReturnDate",
+      "conditionAlias": "协议公证返日期"
+    },
+    {
+      "conditionName": "buyserEntrustSendDate",
+      "conditionAlias": "买家委托公证(送)"
+    },
+    {
+      "conditionName": "buyserEntrustReturnDate",
+      "conditionAlias": "买家委托公证(返)"
+    },
+    {
+      "conditionName": "sellerEntrustSendDate",
+      "conditionAlias": "业主委托公证(送)"
+    },
+    {
+      "conditionName": "sellerEntrustReturnDate",
+      "conditionAlias": "业主委托公证(返)"
+    },
+    {
+      "conditionName": "contractSendDate",
+      "conditionAlias": "合同公证(送)"
+    },
+    {
+      "conditionName": "contractReturnDate",
+      "conditionAlias": "合同公证(返)"
+    },
+    {
+      "conditionName": "assessmentDate",
+      "conditionAlias": "约评估日期"
+    },
+    {
+      "conditionName": "lookHouseDate",
+      "conditionAlias": "看楼日期"
+    },
+    {
+      "conditionName": "preliminarySend",
+      "conditionAlias": "出初评日期"
+    },
+    {
+      "conditionName": "trialDate",
+      "conditionAlias": "送审日期"
+    },
+    {
+      "conditionName": "businessTrialDate",
+      "conditionAlias": "商业送审日期"
+    },
+    {
+      "conditionName": "fundTrialDate",
+      "conditionAlias": "公积金送审日期"
+    },
+    {
+      "conditionName": "agreeLoanDate",
+      "conditionAlias": "出同贷日期"
+    },
+    {
+      "conditionName": "businessAgreeLoanDate",
+      "conditionAlias": "商业同贷日期"
+    },
+    {
+      "conditionName": "fundAgreeLoanDate",
+      "conditionAlias": "公积金同贷日期"
+    },
+    {
+      "conditionName": "signContractDate",
+      "conditionAlias": "签合同日期"
+    },
+    {
+      "conditionName": "issueContractDate",
+      "conditionAlias": "出合同日期"
+    },
+    {
+      "conditionName": "taxDate",
+      "conditionAlias": "完税日期"
+    },
+    {
+      "conditionName": "deliveryDate",
+      "conditionAlias": "递件日期"
+    },
+    {
+      "conditionName": "finalAssessmentDate",
+      "conditionAlias": "出终评日期"
+    },
+    {
+      "conditionName": "newCertDate",
+      "conditionAlias": "出新证日期"
+    },
+    {
+      "conditionName": "filingDate",
+      "conditionAlias": "归档日期"
+    },
+    {
+      "conditionName": "keepMortgageDate",
+      "conditionAlias": "入押日期"
+    },
+    {
+      "conditionName": "hisCert",
+      "conditionAlias": "出他证日期"
+    },
+    {
+      "conditionName": "sendLoanDate",
+      "conditionAlias": "送放款日期"
+    },
+    {
+      "conditionName": "sendBusinessLoanDate",
+      "conditionAlias": "商业送放款日期"
+    },
+    {
+      "conditionName": "sendFundLoanDate",
+      "conditionAlias": "公积金送放款日期"
+    },
+    {
+      "conditionName": "loanDate",
+      "conditionAlias": "放款日期"
+    },
+    {
+      "conditionName": "businessLoanDate",
+      "conditionAlias": "商业放款日期"
+    },
+    {
+      "conditionName": "fundLoanDate",
+      "conditionAlias": "公积金放款日期"
+    },
+    {
+      "conditionName": "returnFileDate",
+      "conditionAlias": "退资料日期"
+    },
+    {
+      "conditionName": "closeFileDate",
+      "conditionAlias": "结案日期"
+    }
+  ],
+  "other": [
+    {
+      "conditionName": "trialDate",
+      "conditionAlias": "送审日期"
+    },
+    {
+      "conditionName": "agreeLoanDate",
+      "conditionAlias": "出同贷日期"
+    },
+    {
+      "conditionName": "deliveryDate",
+      "conditionAlias": "递件日期"
+    },
+    {
+      "conditionName": "sendLoanDate",
+      "conditionAlias": "送放款日期"
+    },
+    {
+      "conditionName": "loanDate",
+      "conditionAlias": "放款日期"
+    }
+  ]
+}

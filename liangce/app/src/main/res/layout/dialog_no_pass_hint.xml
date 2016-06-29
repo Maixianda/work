@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data></data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_34"
+            android:gravity="center"
+            android:text="未通过认证原因"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_17" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_35"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_22"
+            android:paddingRight="@dimen/dp_22"
+            android:text="上传的图片不正确"
+            android:textSize="@dimen/font_15" />
+
+        <include layout="@layout/view_line_vertical" />
+
+        <FrameLayout
+            android:id="@+id/fl_sure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_default"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="确定"
+                android:textColor="@color/red_fa"
+                android:textSize="@dimen/font_17" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

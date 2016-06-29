@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rly_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{header.background}">
+
+        <TextView
+            android:id="@+id/left_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@{header.leftBackground}"
+            android:clickable="@{header.leftClickable}"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:text="@{header.leftTitle}"
+            android:textColor="@color/over_font_color"
+            android:textSize="@dimen/font_15"
+            app:drawableLeft="@{header.leftIcon}"
+            app:onClick="@{header.onBackClickListener}" />
+
+        <TextView
+            android:id="@+id/mid_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/right_header"
+            android:layout_toRightOf="@+id/left_header"
+            android:background="@{header.midBackground}"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@{header.midTitle}"
+            android:textColor="@{header.midTitleColor}"
+            android:textSize="@dimen/font_20"
+            app:drawableLeft="@{header.midIcon}"
+            app:onClick="@{header.onTitleClickListener}" />
+
+        <TextView
+            android:id="@+id/right_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@{header.rightBackground}"
+            android:clickable="@{header.rightClickable}"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:text="@{header.rightTitle}"
+            android:textColor="@{header.rightTitleColor}"
+            android:textSize="@dimen/font_15"
+            app:drawableLeft="@{header.rightIcon}"
+            app:onClick="@{header.onMenuClickListener}" />
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1px"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/line_bg" />-->
+
+    </RelativeLayout>
+
+</layout>

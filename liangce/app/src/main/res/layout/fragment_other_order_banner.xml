@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/hint"
+            layout="@layout/include_load" />
+
+        <com.gzliangce.ui.widget.VpSwipeRefreshLayout
+            android:id="@+id/srv_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/srv_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.bigkoo.convenientbanner.ConvenientBanner
+                            android:id="@+id/cb_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_196"
+                            android:layout_marginBottom="@dimen/dp_1" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_all_products"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:paddingRight="@dimen/dp_5" />
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+                <TextView
+                    android:id="@+id/tv_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginBottom="@dimen/dp_35"
+                    android:background="@drawable/selector_bg_calculator"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/ic_order_direct"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_12"
+                    android:text="马上下单"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+            </FrameLayout>
+
+        </com.gzliangce.ui.widget.VpSwipeRefreshLayout>
+    </FrameLayout>
+</layout>

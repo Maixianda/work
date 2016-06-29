@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_f4"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/icd_header"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                bind:header="@{header}" />
+
+            <include
+                android:id="@+id/user_detail"
+                layout="@layout/include_user_detail" />
+
+            <TextView
+                android:id="@+id/tv_change_order"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_41"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:layout_marginRight="@dimen/dp_11"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@drawable/ripple_default_btn_round_gray"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="转单"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:id="@+id/tv_send_message"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_41"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@drawable/ripple_default_btn_round_white"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="发消息"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

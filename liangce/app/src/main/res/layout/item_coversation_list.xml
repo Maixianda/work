@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.ChatConversation" />
+
+        <variable
+            name="vh"
+            type="io.ganguo.library.ui.adapter.v7.ViewHolder.BaseViewHolder" />
+
+        <variable
+            name="adapter"
+            type="io.ganguo.library.ui.adapter.v7.BaseAdapter" />
+
+        <import type="com.gzliangce.util.XmlUtil" />
+
+        <import type="android.view.View" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rly_item_coversation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_67"
+        android:background="@drawable/ripple_default_white"
+        android:clickable="true"
+        app:adapter="@{adapter}"
+        app:itemClick="@{adapter.itemClick}"
+        app:vh="@{vh}">
+
+        <LinearLayout
+            android:id="@+id/lly_check"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/cb_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/ripple_check_box_red"
+                android:checked="@{data.checked}"
+                android:clickable="false" />
+
+        </LinearLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_broke_header"
+            android:layout_width="@dimen/dp_46"
+            android:layout_height="@dimen/dp_46"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toRightOf="@+id/lly_check"
+            android:background="@drawable/ic_header_default"
+            android:scaleType="fitXY"
+            android:src="@{data.icon}"
+            app:riv_border_color="@color/gray_db"
+            app:riv_border_width="2px"
+            app:riv_corner_radius="7px" />
+
+        <TextView
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_above="@+id/iv_broke_header"
+            android:layout_marginBottom="@dimen/dp_n8"
+            android:layout_marginLeft="@dimen/dp_n18"
+            android:layout_toRightOf="@+id/iv_broke_header"
+            android:background="@drawable/ic_message_red_point"
+            android:gravity="center"
+            android:text="@{XmlUtil.displayUnReadCount(data.unReadCount)}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_9"
+            android:visibility="@{XmlUtil.showUnReadCount(data.unReadCount)?View.VISIBLE:View.GONE}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_broke_header"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:text="@{data.name}"
+                    android:textColor="@color/black_0a"
+                    android:textSize="@dimen/font_14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:textColor="@color/gray_95"
+                    android:textSize="@dimen/font_10"
+                    app:setChatDate="@{data.time}" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="@{data.lastMessage}"
+                android:textColor="@color/gray_95"
+                android:textSize="@dimen/font_14" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray_line" />
+    </RelativeLayout>
+
+</layout>

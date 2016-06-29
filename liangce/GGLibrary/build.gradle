@@ -1,0 +1,32 @@
+apply from: '../config/sub.gradle'
+apply plugin: 'com.android.library'
+
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    Map<String, String> libs = rootProject.ext.libs
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile libs.v4
+    compile libs.v7
+    compile libs.recyclerView
+    compile libs.annotations
+    compile libs.design
+    compile libs.gson
+    compile libs.otto
+    compile libs.yearclass
+    compile libs.retrofit
+    compile libs.retrofitConverterGson
+    compile libs.okhttpLogging
+    compile libs.universalImageLoader
+    compile libs.glide
+    compile libs.picasso
+    compile libs.systembartint
+    compile(libs.materialDialogs) {
+        transitive = true
+    }
+    testCompile libs.junit
+}

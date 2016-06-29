@@ -1,0 +1,36 @@
+<resources>
+    <string name="m_app_name">良策金服</string>
+    <string name="m_app_name_stage">良策金服_s</string>
+    <string name="m_action_settings">Settings</string>
+    <string name="m_action_logout">确认退出当前账号吗？</string>
+    <string name="m_action_delete_image">确认删除这张照片吗？</string>
+
+    <string name="dialog_delete_languages">确认删除该语言？</string>
+    <string name="dialog_delete_lfunctions">确认删除该职能范围？</string>
+    <string name="mortgage_num_text">%1$d年（%2$d期）</string>
+
+    <string name="unspport_message_type">暂不支持此消息类型</string>
+    <string name="photo_hint">1、与买家同照中中介方与买家必须为正面照，且至少为半身照；\n 2、必须手持身份证正面及委托按揭书进行拍摄。</string>
+
+    <string name="http_on_failed">加载失败，点击重试</string>
+    <string name="no_data">暂无数据</string>
+    <string name="no_order">暂无订单</string>
+    <string name="no_messgae">暂无消息</string>
+    <string name="no_news">暂无资讯</string>
+    <string name="no_college">暂无课程</string>
+    <string name="no_product">暂无产品数据</string>
+    <string name="no_collection">暂无收藏</string>
+    <string name="no_order_notes">暂无订单记录</string>
+    <string name="no_document_data">暂无文档资料</string>restart
+    <string name="restart_text">您的账号已经在其它设备上登录</string>
+    <string name="exit_text">确定要退出App吗？</string>
+    <string name="error_count_text">错误次数过多，请重新登录</string>
+    <string name="exit_Login_acitvity_text">确定退出登录界面吗？</string>
+    <string name="Order_receiving_text">确定接单吗？</string>
+    <string name="Order_place_text">确定下单吗？</string>
+    <string name="Order_cancel_text">确定取消订单吗？</string>
+    <string name="Order_change_text">确定转单吗？</string>
+    <string name="log_out_text">确定注销账号吗？</string>
+    <string name="call_text">是否拨打客服电话？</string>
+    <string name="area_onfiled">获取区域数据失败，是否重新获取？</string>
+</resources>

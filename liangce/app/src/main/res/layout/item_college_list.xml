@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.gzliangce.entity.CourseInfo" />
+
+        <import type="com.gzliangce.util.XmlUtil" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_action"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_95"
+        android:background="@drawable/ripple_default"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:id="@+id/rly_introduce_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_12">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="@dimen/dp_118"
+                android:layout_height="@dimen/dp_70"
+                android:scaleType="fitXY"
+                android:src="@drawable/shape_image_loading"
+                app:riv_border_color="@color/gray_db"
+                app:riv_border_width="2px" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_course_pic"
+                android:layout_width="@dimen/dp_118"
+                android:layout_height="@dimen/dp_70"
+                android:scaleType="fitXY"
+                android:src="@{data.cover}"
+                app:riv_border_color="@color/gray_db"
+                app:riv_border_width="2px" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_video"
+                android:visibility="@{XmlUtil.displayVedioIcon(data.form)?View.VISIBLE:View.GONE}" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_9"
+            android:layout_marginRight="@dimen/dp_12"
+            android:layout_toRightOf="@+id/rly_introduce_pic"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_1"
+                android:text="@{data.courseName}"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_1"
+                android:text="@{data.description}"
+                android:textColor="@color/gray_7d"
+                android:textSize="@dimen/font_11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_1"
+                android:text="@{LiangCeUtil.showCreateTime(data.createTime)}"
+                android:textColor="@color/gray_7d"
+                android:textSize="@dimen/font_11" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/line_bg" />
+
+    </RelativeLayout>
+
+</layout>

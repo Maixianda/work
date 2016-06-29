@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="header"
+            type="com.gzliangce.ui.model.HeaderModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/icd_header"
+                layout="@layout/include_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                bind:header="@{header}" />
+
+            <TextView
+                android:id="@+id/tv_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_28"
+                android:layout_marginTop="@dimen/dp_29"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="请绘制至少4位手势"
+                android:textColor="@color/black_0a"
+                android:textSize="@dimen/font_15" />
+
+            <com.leo.gesturelibray.view.CustomLockView
+                android:id="@+id/lv_lock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                bind:color_error_ring="@color/blue_00"
+                bind:color_on_ring="@color/red_fa"
+                bind:color_up_ring="@color/red_fa"
+                bind:inner_background_width="@dimen/dp_19"
+                bind:inner_ring_width="@dimen/dp_14"
+                bind:outer_ring_spacing_width="@dimen/dp_45" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

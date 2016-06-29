@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:swipe="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.avos.avoscloud.im.v2.AVIMMessage" />
+
+        <variable
+            name="icon"
+            type="String" />
+
+        <variable
+            name="vh"
+            type="io.ganguo.library.ui.adapter.v7.ViewHolder.BaseViewHolder" />
+
+        <variable
+            name="adapter"
+            type="io.ganguo.library.ui.adapter.v7.BaseAdapter" />
+
+        <import type="com.gzliangce.util.XmlUtil" />
+
+        <import type="com.gzliangce.util.LiangCeUtil" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_chat_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/gray_b3"
+            android:textSize="@dimen/font_12"
+            app:setChatDate="@{data.timestamp}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_56"
+            android:paddingRight="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_broke_header"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_send_result"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:background="@{XmlUtil.changeSendIcon(data)}"
+                    android:visibility="@{XmlUtil.showSendStatus(data)? View.VISIBLE:View.GONE}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_message_send"
+                    android:gravity="center_vertical|left"
+                    android:text="@{XmlUtil.getMessageContent(data)}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_broke_header"
+                android:layout_width="@dimen/dp_46"
+                android:layout_height="@dimen/dp_46"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_7"
+                android:background="@drawable/ic_header_default"
+                android:scaleType="fitXY"
+                android:src="@{icon}"
+                app:riv_border_color="@color/gray_db"
+                app:riv_border_width="2px"
+                app:riv_corner_radius="5px" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</layout>
