@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import com.gzliangce.AppContext;
 import com.gzliangce.R;
-import com.gzliangce.bean.Constants;
 import com.gzliangce.databinding.FragmentMineBinding;
 import com.gzliangce.dto.UserDTO;
 import com.gzliangce.entity.AccountInfo;
@@ -19,8 +18,8 @@ import com.gzliangce.event.MessageCenterRedPointEvent;
 import com.gzliangce.http.APICallback;
 import com.gzliangce.lclibrary.base.BaseWebActivity;
 import com.gzliangce.lclibrary.ui.MenuBtnWebActivity;
-import com.gzliangce.seccond_ver.SearchHourse.JSUtils;
-import com.gzliangce.seccond_ver.SearchHourse.activity_header_test;
+import com.gzliangce.seccond_ver.checkHourse.JSUtils;
+import com.gzliangce.seccond_ver.checkHourse.webView_CheckHouse;
 import com.gzliangce.ui.activity.MainActivity;
 import com.gzliangce.ui.activity.attestation.LoginActivity;
 import com.gzliangce.ui.activity.qualification.QualificationActivity;
@@ -41,7 +40,6 @@ import java.util.HashMap;
 
 import io.ganguo.library.core.event.extend.OnSingleClickListener;
 import io.ganguo.library.ui.fragment.BaseFragment;
-import io.ganguo.library.util.Numbers;
 import io.ganguo.library.util.Systems;
 import io.ganguo.library.util.crypto.Rsas;
 import io.ganguo.library.util.log.Logger;
@@ -142,7 +140,7 @@ public class MineFragment extends BaseFragment {
         if (!AppContext.me().isLogined()) {
             IntentUtil.actionActivity(getActivity(), LoginActivity.class);
         }
-        Intent intent2 = new Intent(getActivity(), activity_header_test.class);
+        Intent intent2 = new Intent(getActivity(), webView_CheckHouse.class);
         String token = "";
         String signature = "";
         String timestamp = System.currentTimeMillis() + "";

@@ -3,7 +3,6 @@ package com.gzliangce.ui.activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -19,8 +18,9 @@ import com.gzliangce.event.LogoutEvent;
 import com.gzliangce.http.APICallback;
 import com.gzliangce.lclibrary.base.BaseWebActivity;
 import com.gzliangce.lclibrary.ui.MenuBtnWebActivity;
-import com.gzliangce.seccond_ver.SearchHourse.JSUtils;
-import com.gzliangce.seccond_ver.SearchHourse.activity_header_test;
+import com.gzliangce.seccond_ver.checkHourse.JSUtils;
+import com.gzliangce.seccond_ver.checkHourse.webView_CheckHouse;
+import com.gzliangce.seccond_ver.util.SaveParameter;
 import com.gzliangce.ui.activity.attestation.LoginActivity;
 import com.gzliangce.ui.activity.calculator.MortgageCalculatorActivity;
 import com.gzliangce.ui.activity.chat.ConversationActivity;
@@ -33,7 +33,6 @@ import com.gzliangce.ui.fragment.HomeFragment;
 import com.gzliangce.ui.fragment.MessageFragment;
 import com.gzliangce.ui.fragment.MineFragment;
 import com.gzliangce.ui.fragment.NewsAnticipateFragment;
-import com.gzliangce.ui.fragment.OtherOrderBannerFragment;
 import com.gzliangce.ui.fragment.usercenter.AllOrderFragment;
 import com.gzliangce.ui.model.FooterModel;
 import com.gzliangce.ui.model.HeaderModel;
@@ -60,7 +59,6 @@ import io.ganguo.library.util.log.LoggerFactory;
 import retrofit.Call;
 
 import static android.support.v4.app.FragmentTransaction.*;
-import static android.support.v4.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE;
 
 /**
  * 主界面
@@ -143,31 +141,21 @@ public class MainActivity extends BaseFragmentActivtyBinding implements FooterMo
         }else if (from == 3)
         {
             if (LiangCeUtil.judgeUserType(UserType.mortgage)) {
-                Intent intent2 = new Intent(this, activity_header_test.class);
-                intent2.putExtra(BaseWebActivity.WEB_URL, "http://test.lcedai.com/app_public/v1/search/search.html");
-                String js1 = "javascript:(function(){\n" +
-                        "document.getElementById(\"tokenId\").value =' " + "我爱!!罗明通" + "'" +
-                        "})()";
-
-                HashMap<String, String> map = new HashMap<>();
-                String token = "";
-                String timestamp = System.currentTimeMillis() + "";
-                String deviceId = Systems.getDeviceId(AppContext.me());
                 if (AppContext.me().isLogined()) {
-                    token = AppContext.me().getUser().getToken();
-                    map.put("token", token);
-                    map.put("deviceId", deviceId);
-                    String js = JSUtils.getChangeElementJs(map);
+                    Intent intent2 = new Intent(this, webView_CheckHouse.class);
+                    intent2.putExtra(BaseWebActivity.WEB_URL, "http://test.lcedai.com/app_public/v1/search/search.html");
 
+                    HashMap<String, String> map = new HashMap<>();
+                    SaveParameter.Tocken_signature_deviceId para = SaveParameter.getInstance().getTocken_signature_deviceId();
+
+                    map.put("token", para.getmTocken());
+                    map.put("deviceId", para.getmDeviceId());
+                    String js = JSUtils.getChangeElementJs(map);
                     intent2.putExtra(MenuBtnWebActivity.JAVASCRIPT_KEY, js);
                     startActivity(intent2);
                 } else {
                     IntentUtil.actionActivity(this, LoginActivity.class);
                 }
-            }
-            else
-            {
-
             }
         }else if (from == 4) {
             setMessageTitle();

@@ -48,7 +48,7 @@
             android:value="${PGYER_KEY}" />
 
         <service android:name="com.amap.api.location.APSService"></service>
-        <activity android:name=".seccond_ver.SearchHourse.activity_header_test"
+        <activity android:name=".seccond_ver.checkHourse.webView_CheckHouse"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Translucent"/>
         <activity

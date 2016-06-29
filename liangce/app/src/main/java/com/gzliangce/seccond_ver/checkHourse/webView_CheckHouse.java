@@ -1,4 +1,4 @@
-package com.gzliangce.seccond_ver.SearchHourse;
+package com.gzliangce.seccond_ver.checkHourse;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
@@ -27,7 +27,7 @@ import io.ganguo.library.common.LoadingHelper;
 /**
  * Created by maixianda on 16-6-22.
  */
-public class activity_header_test extends BaseSwipeBackActivityBinding implements View.OnClickListener{
+public class webView_CheckHouse extends BaseSwipeBackActivityBinding implements View.OnClickListener{
     private ActivityHeaderTestBinding binding;
 
     private boolean isLoading;

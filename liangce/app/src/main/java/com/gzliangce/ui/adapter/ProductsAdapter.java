@@ -19,8 +19,9 @@ import com.gzliangce.enums.ProductType;
 import com.gzliangce.enums.UserType;
 import com.gzliangce.lclibrary.base.BaseWebActivity;
 import com.gzliangce.lclibrary.ui.MenuBtnWebActivity;
-import com.gzliangce.seccond_ver.SearchHourse.JSUtils;
-import com.gzliangce.seccond_ver.SearchHourse.activity_header_test;
+import com.gzliangce.seccond_ver.checkHourse.JSUtils;
+import com.gzliangce.seccond_ver.checkHourse.webView_CheckHouse;
+import com.gzliangce.seccond_ver.util.SaveParameter;
 import com.gzliangce.ui.activity.attestation.LoginActivity;
 import com.gzliangce.ui.activity.order.SelectBrokerListActivity;
 import com.gzliangce.ui.activity.product.AllProductActivity;
@@ -40,7 +41,6 @@ import io.ganguo.library.ui.adapter.v7.ListAdapter;
 import io.ganguo.library.ui.adapter.v7.ViewHolder.BaseViewHolder;
 import io.ganguo.library.util.Strings;
 import io.ganguo.library.util.Systems;
-import io.ganguo.library.util.crypto.Rsas;
 import io.ganguo.library.util.log.Logger;
 import io.ganguo.library.util.log.LoggerFactory;
 
@@ -162,20 +162,17 @@ public class ProductsAdapter extends ListAdapter<ProductsInfo, ViewDataBinding> 
             if (info.getType() == null) {
                 //region    查册写死
                 if (info.getProductName().equals("查册")) {
-                    Intent intent2 = new Intent(activity, activity_header_test.class);
-                    intent2.putExtra(BaseWebActivity.WEB_URL, "http://test.lcedai.com/app_public/v1/search/search.html");
-                    String js1 = "javascript:(function(){\n" +
-                            "document.getElementById(\"tokenId\").value =' " + "我爱!!罗明通" + "'" +
-                            "})()";
 
-                    HashMap<String, String> map = new HashMap<>();
-                    String token = "";
-                    String timestamp = System.currentTimeMillis() + "";
-                    String deviceId = Systems.getDeviceId(AppContext.me());
                     if (AppContext.me().isLogined()) {
-                        token = AppContext.me().getUser().getToken();
-                        map.put("token", token);
-                        map.put("deviceId", deviceId);
+                        Intent intent2 = new Intent(activity, webView_CheckHouse.class);
+                        intent2.putExtra(BaseWebActivity.WEB_URL, "http://test.lcedai.com/app_public/v1/search/search.html");
+
+                        HashMap<String, String> map = new HashMap<>();
+                        String deviceId = Systems.getDeviceId(AppContext.me());
+                        SaveParameter.Tocken_signature_deviceId para = SaveParameter.getInstance().getTocken_signature_deviceId();
+
+                        map.put("token", para.getmTocken());
+                        map.put("deviceId", para.getmDeviceId());
                         String js = JSUtils.getChangeElementJs(map);
 
                         intent2.putExtra(MenuBtnWebActivity.JAVASCRIPT_KEY, js);
